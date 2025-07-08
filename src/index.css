@@ -1,6 +1,9 @@
+@import "leaflet/dist/leaflet.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 @keyframes fade-in-up {
   0% {
     opacity: 0;
@@ -10,6 +13,9 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+body {
+  font-family: 'Nunito Sans', sans-serif;
 }
 .animate-fade-in-up {
   animation: fade-in-up 0.5s ease-out;

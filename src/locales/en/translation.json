@@ -1,0 +1,35 @@
+{
+  "welcomeUser": "Welcome, {{name}} from {{location}}!",
+  "typewriter": {
+    "line1": "Smart Farming for Everyone.",
+    "line2": "Empowering Soil and Sustainability.",
+    "line3": "Maximizing Yield with AI."
+  },
+  "cta": {
+    "startPlanning": "Start Planning",
+    "checkMarket": "Check Market Prices"
+  },
+  "carousel": {
+    "caption1": "Happy farmer with tomato yield",
+    "caption2": "Smiling after organic paddy harvest",
+    "caption3": "Chickpea success with intercropping"
+  },
+  "why": {
+    "heading": "Why SowSure?",
+    "point1": "Smart crop recommendations based on soil, water, and past usage",
+    "point2": "Guided intercropping & rotation plans",
+    "point3": "Organic manure suggestions & profit forecast",
+    "point4": "Designed for sustainability and small farmers"
+  },
+  "tasks": {
+    "0": "💧 Time to water your tomato field.",
+    "1": "🌱 Apply organic compost to your chickpea bed.",
+    "2": "🧪 Test soil pH for your upcoming paddy rotation.",
+    "3": "☀️ Weeding scheduled for coriander section today.",
+    "4": "🚜 Plan irrigation — forecast shows no rain tomorrow."
+  },
+  "footer": {
+    "note": "SowSure supports",
+    "credit": "Built by Team Thunders ⚡ for those who feed the world."
+  }
+}

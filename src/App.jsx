@@ -11,46 +11,62 @@ import ResultsPage from "./components/ResultsPage";
 import About from "./components/About";
 import FAQ from "./components/FAQ";
 import WhatWeDo from "./components/WhatWeDo";
-import ChatBotPage from "./components/ChatBotPage"; // ✅ make sure this is imported
+import ChatBotPage from "./components/ChatBotPage";
 import MarketCategoryPage from "./components/MarketCategoryPage";
 import FruitsPricePage from "./components/FruitsPricePage";
 import VegetablesPricePage from "./components/VegetablesPricePage";
 import FarmDashboard from "./components/FarmDashboard";
+import PlantDiseaseInfoPage from "./components/PlantDiseaseInfoPage";
+import FarmCalendarPage from "./components/FarmCalendarPage";
+import MarketMapPage from "./components/MarketMapPage";
+import HelplinePage from "./components/HelplinePage";
+import FeedbackPage from "./components/FeedbackPage";
+import "./i18n";
 
 function App() {
   const [user, setUser] = useState(null);
 
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        {/* Show LoginPage only at /login */}
-        {!user && (
-          <>
-            <Route path="/login" element={<LoginPage setUser={setUser} />} />
-            <Route path="*" element={<Navigate to="/login" />} />
-          </>
-        )}
+      <div className="bg-base min-h-screen text-gray-800">
+        <Navbar />
 
-        {/* Show actual app pages only after login */}
-        {user && (
-          <>
-            <Route path="/" element={<LandingPage user={user} />} />
-            <Route path="/form" element={<InputForm />} />
-            <Route path="/results" element={<ResultsPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/whatwedo" element={<WhatWeDo />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/chat" element={<ChatBotPage />} />
-            <Route path="/market" element={<MarketCategoryPage />} />
-            <Route path="/market/fruits" element={<FruitsPricePage />} />
-            <Route path="/market/vegetables" element={<VegetablesPricePage />} />
-            <Route path="/myfarm" element={<FarmDashboard user={user} />} />
+        <Routes>
+          {/* 🟢 If user not logged in, only allow /login and redirect others */}
+          {!user && (
+            <>
+              <Route path="/login" element={<LoginPage setUser={setUser} />} />
+              <Route path="*" element={<Navigate to="/login" replace />} />
+            </>
+          )}
 
-          </>
-        )}
-      </Routes>
-      <Footer />
+          {/* ✅ Authenticated user routes */}
+          {user && (
+            <>
+              <Route path="/" element={<LandingPage user={user} />} />
+              <Route path="/form" element={<InputForm />} />
+              <Route path="/results" element={<ResultsPage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/whatwedo" element={<WhatWeDo />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/chat" element={<ChatBotPage />} />
+              <Route path="/market" element={<MarketCategoryPage />} />
+              <Route path="/market/fruits" element={<FruitsPricePage />} />
+              <Route path="/market/vegetables" element={<VegetablesPricePage />} />
+              <Route path="/disease-info" element={<PlantDiseaseInfoPage />} />
+              <Route path="/myfarm" element={<FarmDashboard user={user} />} />
+              <Route path="/calendar" element={<FarmCalendarPage />} />
+              <Route path="/market-map" element={<MarketMapPage />} />
+              <Route path="/helpline" element={<HelplinePage />} />
+              <Route path="/feedback" element={<FeedbackPage />} />
+              {/* 🔒 Optional fallback */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </>
+          )}
+        </Routes>
+
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
