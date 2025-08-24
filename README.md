@@ -2,7 +2,7 @@
 
 SowSure is an AI-powered web platform designed to empower small and marginal farmers with intelligent crop cycle planning, localized agricultural support, and simplified access to critical farming insights. Developed as part of a hackathon initiative, the application combines agricultural best practices with modern AI and web technologies to solve real-world challenges in Indian agriculture.
 
-🌐 Explore here: https://sowsure.vercel.app/
+
 ---
 
 ## 🌾 Problem Statement
